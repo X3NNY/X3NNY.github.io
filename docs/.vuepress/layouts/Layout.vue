@@ -3,7 +3,7 @@ import ParentLayout from 'vuepress-theme-hope/layouts/Layout'
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-let link = `https://xenny.wiki/${route.path}`
+let link = `https://xenny.wiki${route.path}`
 </script>
 
 <template>
