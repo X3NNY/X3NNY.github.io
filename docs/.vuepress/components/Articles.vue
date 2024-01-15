@@ -36,7 +36,7 @@ for (let article of articles.value.items) {
         let e = article.info.e || paths.at(-1)?.split('.')[0];
         e = e.match(/<h1>(.+)<\/h1>/)
         let title = '';
-        if (e.length >= 2) {
+        if (e && e.length >= 2) {
             title = e[1].trim();
         }
 
