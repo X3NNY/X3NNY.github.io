@@ -27,6 +27,19 @@ export default defineUserConfig({
       componentsDir: path.resolve(__dirname, './components'),
     }),
   ],
+  head: [
+    [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?312b8b55ca61f317ebbcb4966a0d950e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
+    ]
+  ]
   // 和 PWA 一起启用
   // shouldPrefetch: false,
 });
