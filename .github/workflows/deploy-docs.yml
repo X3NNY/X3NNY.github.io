@@ -35,7 +35,7 @@ jobs:
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: npm i && npm run docs:build
+        run: pnpm docs:build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
