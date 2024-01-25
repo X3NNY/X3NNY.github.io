@@ -1,46 +1,45 @@
-name: docs
+name: 部署文档
 
 on:
-  # 每当 push 到 main 分支时触发部署
   push:
-    branches: [main]
-  # 手动触发部署
-  workflow_dispatch:
+    branches:
+      # 确保这是你正在使用的分支名称
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  docs:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
         with:
-          # 选择要使用的 pnpm 版本
-          version: 8
-          # 使用 pnpm 安装依赖
-          run_install: true
+          node-version: 20
+          cache: npm
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          # 选择要使用的 node 版本
-          node-version: 18
-          # 缓存 pnpm 依赖
-          # cache: pnpm
+      - name: 安装依赖
+        run: npm ci
 
-      # 运行构建脚本
-      - name: Build VuePress site
-        run: pnpm docs:build
-
-      - name: Deploy 🚀
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          npm run docs:build
+          > docs/.vuepress/dist/.nojekyll
+      - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 需要部署到的分支
+          # 这是文档部署到的分支名称
           branch: gh-pages
-          # 需要部署的文件夹
           folder: docs/.vuepress/dist
