@@ -31,11 +31,11 @@ jobs:
           # 选择要使用的 node 版本
           node-version: 18
           # 缓存 pnpm 依赖
-          cache: pnpm
+          # cache: pnpm
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: pnpm docs:build
+        run: npm i && npm run docs:build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
