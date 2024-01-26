@@ -113,6 +113,7 @@ export default hopeTheme({
       components: ["Badge", "VPCard"],
     },
     comment: {
+      comment: true,
       provider: "Giscus",
       repo: "X3NNY/X3NNY.github.io",
       repoId: "R_kgDOLEEIXw",
