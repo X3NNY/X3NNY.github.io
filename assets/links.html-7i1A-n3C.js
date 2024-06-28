@@ -1,1 +1,0 @@
-import{_ as t,o as s,c as a,a as e,b as n}from"./app-z8zTFrh6.js";const c={},o=e("h1",{id:"友情链接",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#友情链接","aria-hidden":"true"},"#"),n(" 友情链接")],-1),l=e("ul",null,[e("li",null,"之后再写这个页面。")],-1),r=[o,l];function _(i,d){return s(),a("div",null,r)}const u=t(c,[["render",_],["__file","links.html.vue"]]);export{u as default};
