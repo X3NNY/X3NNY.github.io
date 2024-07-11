@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-b79cbfac","path":"/posts/mlp/FWI/","title":"F W I","lang":"zh-CN","frontmatter":{"title":"F W I","article":false,"feed":false,"sitemap":false,"seo":false,"head":[]},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};
