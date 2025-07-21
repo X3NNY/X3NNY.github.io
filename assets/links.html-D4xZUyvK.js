@@ -1,0 +1,1 @@
+import{_ as t,c as s,o as n,b as e,e as a}from"./app-OrcR8YOY.js";const c={},o=e("h1",{id:"友情链接",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#友情链接","aria-hidden":"true"},"#"),a(" 友情链接")],-1),l=e("ul",null,[e("li",null,"之后再写这个页面。")],-1),r=[o,l];function _(i,d){return n(),s("div",null,r)}const u=t(c,[["render",_],["__file","links.html.vue"]]);export{u as default};
